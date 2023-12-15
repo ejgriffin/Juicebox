@@ -72,7 +72,12 @@ usersRouter.post("/register", async (req, res, next) => {
         message: "A user by that username already exists",
       });
     }
-
+    // if (!user) {
+    //   throw {
+    //     name: "UserNotFoundError",
+    //     message: "A user with that username does not exist",
+    //   };
+    // }
     const user = await createUser({
       username,
       password,
